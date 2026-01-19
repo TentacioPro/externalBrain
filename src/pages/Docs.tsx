@@ -1,22 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Code, Database, Layers, Rocket } from 'lucide-react';
 
 export const Docs: React.FC = () => {
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Documentation</h1>
-        <p className="text-lg text-gray-600">
-          Learn how this Notebooks Dashboard works and how to customize it.
+    <div>
+      {/* Hero Section */}
+      <div className="flex flex-col items-center justify-center py-20 md:py-24 text-center">
+        <h1 className="mb-4 text-4xl font-semibold tracking-tighter text-gray-900 sm:text-5xl md:text-6xl dark:text-white">
+          Documentation
+        </h1>
+        <p className="max-w-[600px] text-lg text-gray-500 dark:text-gray-400 font-light leading-relaxed">
+          Learn how this Learning Garden works and how to customize it for your own knowledge management.
         </p>
       </div>
 
-      <div className="space-y-8">
-        <section className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+      <div className="space-y-8 max-w-4xl mx-auto">
+        <section className="p-6 bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-soft">
           <div className="flex items-center gap-3 mb-4">
-            <Layers className="w-6 h-6 text-blue-600" />
-            <h2 className="text-2xl font-bold text-gray-900">Tech Stack</h2>
+            <span className="material-symbols-outlined text-primary text-3xl">layers</span>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Tech Stack</h2>
           </div>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-2">
@@ -46,10 +48,10 @@ export const Docs: React.FC = () => {
           </ul>
         </section>
 
-        <section className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+        <section className="p-6 bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-soft">
           <div className="flex items-center gap-3 mb-4">
-            <Database className="w-6 h-6 text-blue-600" />
-            <h2 className="text-2xl font-bold text-gray-900">Data Structure</h2>
+            <span className="material-symbols-outlined text-primary text-3xl">database</span>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Data Structure</h2>
           </div>
           <p className="text-gray-700 mb-4">
             All notebook data is stored in <code className="px-2 py-1 bg-gray-100 rounded text-sm">src/data/notebooks.json</code>. 
@@ -68,10 +70,10 @@ export const Docs: React.FC = () => {
           </pre>
         </section>
 
-        <section className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+        <section className="p-6 bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-soft">
           <div className="flex items-center gap-3 mb-4">
-            <Code className="w-6 h-6 text-blue-600" />
-            <h2 className="text-2xl font-bold text-gray-900">Components</h2>
+            <span className="material-symbols-outlined text-primary text-3xl">code</span>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Components</h2>
           </div>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
@@ -97,10 +99,10 @@ export const Docs: React.FC = () => {
           </div>
         </section>
 
-        <section className="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
+        <section className="p-6 bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-soft">
           <div className="flex items-center gap-3 mb-4">
-            <Rocket className="w-6 h-6 text-blue-600" />
-            <h2 className="text-2xl font-bold text-gray-900">Getting Started</h2>
+            <span className="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Getting Started</h2>
           </div>
           <ol className="space-y-3 text-gray-700">
             <li className="flex items-start gap-3">
@@ -126,14 +128,14 @@ export const Docs: React.FC = () => {
           </ol>
         </section>
 
-        <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
+        <div className="p-6 bg-card-mint dark:bg-[#1a2e2e] border border-primary/20 rounded-2xl">
           <div className="flex items-start gap-4">
-            <BookOpen className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+            <span className="material-symbols-outlined text-primary text-3xl flex-shrink-0">book</span>
             <div>
-              <p className="text-blue-900 font-semibold mb-2">Ready to explore?</p>
+              <p className="text-gray-900 dark:text-white font-semibold mb-2">Ready to explore?</p>
               <Link
                 to="/"
-                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold hover:underline"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-semibold transition-colors"
               >
                 Back to Dashboard →
               </Link>
@@ -141,6 +143,9 @@ export const Docs: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Decorative background gradient */}
+      <div className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 opacity-30 dark:opacity-10" style={{ background: 'radial-gradient(circle at 15% 50%, rgba(61, 109, 113, 0.15), transparent 25%), radial-gradient(circle at 85% 30%, rgba(250, 232, 224, 0.5), transparent 25%)' }}></div>
     </div>
   );
 };

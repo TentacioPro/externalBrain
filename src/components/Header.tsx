@@ -20,12 +20,12 @@ export const Header: React.FC = () => {
           >
             Notebooks
           </Link>
-          <a
-            href="#"
+          <Link
+            to="/infographics"
             className="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
           >
             Infographics
-          </a>
+          </Link>
           <Link
             to="/docs"
             className="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
