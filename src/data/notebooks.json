@@ -1,0 +1,102 @@
+[
+  {
+    "id": "llm-engineering",
+    "title": "LLM Engineering",
+    "description": "Techniques for fine-tuning, RAG implementation, and prompt optimization strategies for large language models.",
+    "icon": "🧠",
+    "link": "#",
+    "color": "mint",
+    "sourceCount": 12,
+    "updatedAt": "2h ago"
+  },
+  {
+    "id": "biohacking",
+    "title": "Biohacking",
+    "description": "Personal protocols for sleep optimization, nutritional supplements, and wearable data analysis.",
+    "icon": "🧬",
+    "link": "#",
+    "color": "peach",
+    "sourceCount": 4,
+    "updatedAt": "5h ago"
+  },
+  {
+    "id": "stoicism",
+    "title": "Stoicism",
+    "description": "Notes on Marcus Aurelius' Meditations and daily practices for maintaining emotional equilibrium.",
+    "icon": "🏛️",
+    "link": "#",
+    "color": "cream",
+    "sourceCount": 8,
+    "updatedAt": "1d ago"
+  },
+  {
+    "id": "design-systems",
+    "title": "Design Systems",
+    "description": "Atomic design principles, tokenization strategies, and component library architecture.",
+    "icon": "🎨",
+    "link": "#",
+    "color": "lavender",
+    "sourceCount": 16,
+    "updatedAt": "2d ago"
+  },
+  {
+    "id": "q3-roadmap",
+    "title": "Q3 Roadmap",
+    "description": "Strategic initiatives, OKRs, and timeline planning for the upcoming quarter.",
+    "icon": "🗺️",
+    "link": "#",
+    "color": "sky",
+    "sourceCount": 1,
+    "updatedAt": "3d ago"
+  },
+  {
+    "id": "urban-gardening",
+    "title": "Urban Gardening",
+    "description": "Tips for balcony plants, soil pH management, and seasonal planting calendars.",
+    "icon": "🌿",
+    "link": "#",
+    "color": "mint",
+    "sourceCount": 3,
+    "updatedAt": "1w ago"
+  },
+  {
+    "id": "react-patterns",
+    "title": "React Patterns",
+    "description": "Advanced hooks, performance optimization, and server component architecture.",
+    "icon": "⚛️",
+    "link": "#",
+    "color": "peach",
+    "sourceCount": 15,
+    "updatedAt": "2w ago"
+  },
+  {
+    "id": "reading-list",
+    "title": "Reading List",
+    "description": "A collection of sci-fi novels, technical documentation, and philosophy essays to read this year.",
+    "icon": "📚",
+    "link": "#",
+    "color": "cream",
+    "sourceCount": 22,
+    "updatedAt": "3w ago"
+  },
+  {
+    "id": "weekend-cooking",
+    "title": "Weekend Cooking",
+    "description": "Italian pasta recipes, sourdough bread experiments, and vegetarian dinner ideas.",
+    "icon": "🍳",
+    "link": "#",
+    "color": "lavender",
+    "sourceCount": 7,
+    "updatedAt": "1mo ago"
+  },
+  {
+    "id": "finance",
+    "title": "Finance",
+    "description": "Investment portfolio tracking, budget spreadsheets, and tax resources.",
+    "icon": "📈",
+    "link": "#",
+    "color": "sky",
+    "sourceCount": 5,
+    "updatedAt": "2mo ago"
+  }
+]

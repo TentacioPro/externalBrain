@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Learning Garden Dashboard</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3d6d71",
+              "primary-hover": "#2f5558",
+              "background-light": "#fafaf9", // stone-50
+              "background-dark": "#1c1917", // stone-900
+              "card-mint": "#e6f4f1",
+              "card-lavender": "#f0e6f5",
+              "card-peach": "#fae8e0",
+              "card-cream": "#fbf7e3",
+              "card-sky": "#e0f2fe",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem",
+              "lg": "1rem",
+              "xl": "1.5rem",
+              "2xl": "2rem", // Extra roundness requested
+              "full": "9999px",
+            },
+            boxShadow: {
+              'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+              'hover': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-gray-100 antialiased selection:bg-primary/20 selection:text-primary">
+<div class="flex min-h-screen flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-stone-200/50 bg-background-light/80 backdrop-blur-xl dark:border-stone-800 dark:bg-background-dark/80 transition-all duration-300">
+<div class="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6 lg:px-12">
+<div class="flex items-center gap-3">
+<div class="flex size-8 items-center justify-center rounded-lg bg-stone-200 dark:bg-stone-800 text-primary">
+<span class="material-symbols-outlined text-[20px]">spa</span>
+</div>
+<span class="text-lg font-bold tracking-tight text-gray-900 dark:text-white">Learning Garden</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors" href="#">Notebooks</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors" href="#">Infographics</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors" href="#">Docs</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex items-center justify-center rounded-xl bg-primary px-5 py-2 text-sm font-bold text-white shadow-sm hover:bg-primary-hover hover:shadow transition-all active:scale-95">
+                        Subscribe
+                    </button>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden flex items-center justify-center text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-6 lg:px-12 pb-20">
+<div class="mx-auto max-w-[1400px]">
+<!-- Hero Section -->
+<div class="flex flex-col items-center justify-center py-20 md:py-24 text-center">
+<div class="mb-4 inline-flex items-center rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-gray-500 shadow-sm dark:border-stone-800 dark:bg-stone-900 dark:text-gray-400">
+<span class="mr-1.5 h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                        Last sync: Just now
+                    </div>
+<h1 class="mb-4 text-4xl font-semibold tracking-tighter text-gray-900 sm:text-5xl md:text-6xl dark:text-white">
+                        My External Brain
+                    </h1>
+<p class="max-w-[600px] text-lg text-gray-500 dark:text-gray-400 font-light leading-relaxed">
+                        A curated digital garden of notes, research papers, and synthesized thoughts. Exploring the intersection of technology and biology.
+                    </p>
+<!-- Search Bar placeholder for utility feel -->
+<div class="mt-8 w-full max-w-md relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full rounded-2xl border-0 py-3 pl-10 pr-4 text-gray-900 ring-1 ring-inset ring-stone-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 shadow-sm bg-white dark:bg-stone-900 dark:ring-stone-800 dark:text-white transition-all" placeholder="Search your notebooks..." type="text"/>
+</div>
+</div>
+<!-- Masonry Grid -->
+<!-- Using CSS columns for true masonry layout -->
+<div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+<!-- Card 1: LLM Engineering (Mint) -->
+<article class="group break-inside-avoid rounded-2xl bg-card-mint dark:bg-[#1a2e2e] p-6 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 relative overflow-hidden border border-transparent hover:border-primary/10">
+<div class="mb-4 flex items-start justify-between">
+<span class="text-4xl filter drop-shadow-sm">🧠</span>
+<span class="inline-flex items-center rounded-full bg-white/60 dark:bg-black/20 px-2.5 py-1 text-xs font-medium text-teal-800 dark:text-teal-200 backdrop-blur-sm">
+                                12 sources
+                            </span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white tracking-tight">LLM Engineering</h3>
+<p class="mb-6 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Techniques for fine-tuning, RAG implementation, and prompt optimization strategies for large language models.
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Updated 2h ago</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-primary-hover">
+                                View
+                            </button>
+</div>
+</article>
+<!-- Card 2: Biohacking (Peach) -->
+<article class="group break-inside-avoid rounded-2xl bg-card-peach dark:bg-[#2e1d18] p-6 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 relative overflow-hidden border border-transparent hover:border-orange-500/10">
+<div class="mb-4 flex items-start justify-between">
+<span class="text-4xl filter drop-shadow-sm">🧬</span>
+<span class="inline-flex items-center rounded-full bg-white/60 dark:bg-black/20 px-2.5 py-1 text-xs font-medium text-orange-800 dark:text-orange-200 backdrop-blur-sm">
+                                4 sources
+                            </span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white tracking-tight">Biohacking</h3>
+<p class="mb-6 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Personal protocols for sleep optimization, nutritional supplements, and wearable data analysis.
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Updated 5h ago</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-primary-hover">
+                                View
+                            </button>
+</div>
+</article>
+<!-- Card 3: Stoicism (Cream) -->
+<article class="group break-inside-avoid rounded-2xl bg-card-cream dark:bg-[#2e2b18] p-6 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 relative overflow-hidden border border-transparent hover:border-yellow-500/10">
+<div class="mb-4 flex items-start justify-between">
+<span class="text-4xl filter drop-shadow-sm">🏛️</span>
+<span class="inline-flex items-center rounded-full bg-white/60 dark:bg-black/20 px-2.5 py-1 text-xs font-medium text-yellow-800 dark:text-yellow-200 backdrop-blur-sm">
+                                8 sources
+                            </span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white tracking-tight">Stoicism</h3>
+<p class="mb-6 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Notes on Marcus Aurelius' Meditations and daily practices for maintaining emotional equilibrium.
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Updated 1d ago</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-primary-hover">
+                                View
+                            </button>
+</div>
+</article>
+<!-- Card 4: Design Systems (Lavender) -->
+<article class="group break-inside-avoid rounded-2xl bg-card-lavender dark:bg-[#25182e] p-6 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 relative overflow-hidden border border-transparent hover:border-purple-500/10">
+<div class="mb-4 flex items-start justify-between">
+<span class="text-4xl filter drop-shadow-sm">🎨</span>
+<span class="inline-flex items-center rounded-full bg-white/60 dark:bg-black/20 px-2.5 py-1 text-xs font-medium text-purple-800 dark:text-purple-200 backdrop-blur-sm">
+                                16 sources
+                            </span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white tracking-tight">Design Systems</h3>
+<p class="mb-6 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Atomic design principles, tokenization strategies, and component library architecture.
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Updated 2d ago</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-primary-hover">
+                                View
+                            </button>
+</div>
+</article>
+<!-- Card 5: Q3 Roadmap (Sky) -->
+<article class="group break-inside-avoid rounded-2xl bg-card-sky dark:bg-[#18262e] p-6 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 relative overflow-hidden border border-transparent hover:border-blue-500/10">
+<div class="mb-4 flex items-start justify-between">
+<span class="text-4xl filter drop-shadow-sm">🗺️</span>
+<span class="inline-flex items-center rounded-full bg-white/60 dark:bg-black/20 px-2.5 py-1 text-xs font-medium text-sky-800 dark:text-sky-200 backdrop-blur-sm">
+                                1 source
+                            </span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white tracking-tight">Q3 Roadmap</h3>
+<p class="mb-6 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                           Strategic initiatives, OKRs, and timeline planning for the upcoming quarter.
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Updated 3d ago</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-primary-hover">
+                                View
+                            </button>
+</div>
+</article>
+<!-- Card 6: Gardening Tips (Mint) -->
+<article class="group break-inside-avoid rounded-2xl bg-card-mint dark:bg-[#1a2e2e] p-6 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 relative overflow-hidden border border-transparent hover:border-primary/10">
+<div class="mb-4 flex items-start justify-between">
+<span class="text-4xl filter drop-shadow-sm">🌿</span>
+<span class="inline-flex items-center rounded-full bg-white/60 dark:bg-black/20 px-2.5 py-1 text-xs font-medium text-teal-800 dark:text-teal-200 backdrop-blur-sm">
+                                3 sources
+                            </span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white tracking-tight">Urban Gardening</h3>
+<p class="mb-6 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Tips for balcony plants, soil pH management, and seasonal planting calendars.
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Updated 1w ago</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-primary-hover">
+                                View
+                            </button>
+</div>
+</article>
+<!-- Card 7: React Patterns (Peach) -->
+<article class="group break-inside-avoid rounded-2xl bg-card-peach dark:bg-[#2e1d18] p-6 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 relative overflow-hidden border border-transparent hover:border-orange-500/10">
+<div class="mb-4 flex items-start justify-between">
+<span class="text-4xl filter drop-shadow-sm">⚛️</span>
+<span class="inline-flex items-center rounded-full bg-white/60 dark:bg-black/20 px-2.5 py-1 text-xs font-medium text-orange-800 dark:text-orange-200 backdrop-blur-sm">
+                                15 sources
+                            </span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white tracking-tight">React Patterns</h3>
+<p class="mb-6 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Advanced hooks, performance optimization, and server component architecture.
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Updated 2w ago</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-primary-hover">
+                                View
+                            </button>
+</div>
+</article>
+<!-- Card 8: Reading List (Cream) -->
+<article class="group break-inside-avoid rounded-2xl bg-card-cream dark:bg-[#2e2b18] p-6 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 relative overflow-hidden border border-transparent hover:border-yellow-500/10">
+<div class="mb-4 flex items-start justify-between">
+<span class="text-4xl filter drop-shadow-sm">📚</span>
+<span class="inline-flex items-center rounded-full bg-white/60 dark:bg-black/20 px-2.5 py-1 text-xs font-medium text-yellow-800 dark:text-yellow-200 backdrop-blur-sm">
+                                22 sources
+                            </span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white tracking-tight">Reading List</h3>
+<p class="mb-6 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                            A collection of sci-fi novels, technical documentation, and philosophy essays to read this year.
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Updated 3w ago</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-primary-hover">
+                                View
+                            </button>
+</div>
+</article>
+<!-- Card 9: Cooking Recipes (Lavender) -->
+<article class="group break-inside-avoid rounded-2xl bg-card-lavender dark:bg-[#25182e] p-6 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 relative overflow-hidden border border-transparent hover:border-purple-500/10">
+<div class="mb-4 flex items-start justify-between">
+<span class="text-4xl filter drop-shadow-sm">🍳</span>
+<span class="inline-flex items-center rounded-full bg-white/60 dark:bg-black/20 px-2.5 py-1 text-xs font-medium text-purple-800 dark:text-purple-200 backdrop-blur-sm">
+                                7 sources
+                            </span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white tracking-tight">Weekend Cooking</h3>
+<p class="mb-6 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Italian pasta recipes, sourdough bread experiments, and vegetarian dinner ideas.
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Updated 1mo ago</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-primary-hover">
+                                View
+                            </button>
+</div>
+</article>
+<!-- Card 10: Financial Planning (Sky) -->
+<article class="group break-inside-avoid rounded-2xl bg-card-sky dark:bg-[#18262e] p-6 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 relative overflow-hidden border border-transparent hover:border-blue-500/10">
+<div class="mb-4 flex items-start justify-between">
+<span class="text-4xl filter drop-shadow-sm">📈</span>
+<span class="inline-flex items-center rounded-full bg-white/60 dark:bg-black/20 px-2.5 py-1 text-xs font-medium text-sky-800 dark:text-sky-200 backdrop-blur-sm">
+                                5 sources
+                            </span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white tracking-tight">Finance</h3>
+<p class="mb-6 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Investment portfolio tracking, budget spreadhseets, and tax resources.
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Updated 2mo ago</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-primary-hover">
+                                View
+                            </button>
+</div>
+</article>
+<!-- New Notebook Placeholder -->
+<article class="group break-inside-avoid rounded-2xl border-2 border-dashed border-stone-300 dark:border-stone-700 p-6 flex flex-col items-center justify-center text-center min-h-[220px] cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
+<div class="size-12 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-400 dark:text-stone-500 mb-3 group-hover:bg-white group-hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<h3 class="text-lg font-bold text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">Create Notebook</h3>
+<p class="text-sm text-gray-400 dark:text-gray-500 mt-1">Start a new collection</p>
+</article>
+</div>
+<!-- Floating Action Button for mobile -->
+<button class="md:hidden fixed bottom-6 right-6 size-14 rounded-full bg-primary text-white shadow-lg flex items-center justify-center hover:bg-primary-hover active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</div>
+</main>
+</div>
+<!-- Quick decorative background gradient -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 opacity-30 dark:opacity-10" style="background: radial-gradient(circle at 15% 50%, rgba(61, 109, 113, 0.15), transparent 25%), radial-gradient(circle at 85% 30%, rgba(250, 232, 224, 0.5), transparent 25%);"></div>
+</body></html>
