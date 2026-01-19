@@ -10,4 +10,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  base: '/', // Use '/' for custom domain, or '/repo-name/' for GitHub Pages subdomain
 })
