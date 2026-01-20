@@ -10,5 +10,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/externalBrain/', // GitHub Pages repository path
+  base: '/', // Use '/' for custom domain
 })
